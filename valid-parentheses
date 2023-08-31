@@ -1,0 +1,29 @@
+//https://leetcode.com/problems/valid-parentheses/
+// LEETCODE 
+ 
+// Dylan used objects to solve this 
+let valid = true; 
+let s =  "()(([][[{}{i"
+// let s = "))"
+let arrayS = s.split(""); 
+for (i=0; i<arrayS.length; i+=2) {
+
+    if ( arrayS[i] == "(") {
+        let checkP = arrayS[i+1] == ")" ? "Good ()" : "No good close for ( " + arrayS[i+1]; 
+        let tf = arrayS[i+1] == ")" ? true : false;
+        console.log(checkP); 
+    } else if ( arrayS[i] == "[") {
+        let checkP = arrayS[i+1] == "]" ? "Good []" : "No good close for [ " + arrayS[i+1]; 
+        let tf = arrayS[i+1] == "[" ? true : false;
+        console.log(checkP); 
+    } else if ( arrayS[i] == "{") {
+        let checkP = arrayS[i+1] == "}" ? "Good {}" : "No good close for { " + arrayS[i+1]; 
+        let tf = arrayS[i+1] == "}" ? true : false; 
+        console.log(checkP); 
+    } 
+    
+    if (tf == false) { 
+        valid = false;  
+    }
+}
+console.log("Output: " + valid); 
